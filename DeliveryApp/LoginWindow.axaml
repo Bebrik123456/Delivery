@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="DeliveryApp.LoginWindow"
+        Title="Login - DeliveryApp">
+    
+    
+    <StackPanel Margin="20" HorizontalAlignment="Center">
+        
+        <TextBlock Text="Авторизаия" FontSize="20" Margin="0,0,0,40"/>
+        <TextBlock Text="Логин" FontSize="12" Margin="0,0,0,10"/>
+        <TextBox Name="UsernameTextBox" Width="300" Watermark="Введите логин"/>
+        
+        <TextBlock Text="Пароль" FontSize="12" Margin="0,10,0,10"/>
+        <TextBox Name="PasswordTextBox" Width="300" Watermark="Введите пароль"/>
+        
+        <Button Name="LoginButton" Content="Войти" Width="300" Margin="0,20,0,0" Click="OnLoginButtonClick"/>
+    </StackPanel>
+</Window>
