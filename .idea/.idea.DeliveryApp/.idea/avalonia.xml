@@ -5,6 +5,7 @@
       <map>
         <entry key="DeliveryApp/AdministratorMainWindow.axaml" value="DeliveryApp/DeliveryApp.csproj" />
         <entry key="DeliveryApp/App.axaml" value="DeliveryApp/DeliveryApp.csproj" />
+        <entry key="DeliveryApp/EmployeesWindow.axaml" value="DeliveryApp/DeliveryApp.csproj" />
         <entry key="DeliveryApp/LoginWindow.axaml" value="DeliveryApp/DeliveryApp.csproj" />
         <entry key="DeliveryApp/MainWindow.axaml" value="DeliveryApp/DeliveryApp.csproj" />
       </map>

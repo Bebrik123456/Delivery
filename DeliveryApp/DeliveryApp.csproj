@@ -28,4 +28,15 @@
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Image\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Image\Logo.jpg" />
+      <AvaloniaResource Include="Image\Logo.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+    </ItemGroup>
 </Project>
