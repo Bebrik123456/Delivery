@@ -34,7 +34,7 @@ namespace DeliveryApp
                 string a;
 
 
-                string orderInfo = $"{order.UserId} | {order.Username} | {order.Role}| {order.Status} ";
+                string orderInfo = $"{order.UserId}  {order.Username}  {order.Role} {order.Status} ";
                 OrdersListBox.Items.Add(orderInfo);
             }
         }
@@ -43,18 +43,18 @@ namespace DeliveryApp
         {
             var orders = new List<Employee>();
 
-            var conn = new MySqlConnection("Server=localhost;Database=Provider;User Id=root;Password=;");
+            var conn = new MySqlConnection("Server=localhost;Database=DeliveryService;User Id=root;Password=;");
             {
                 conn.Open();
-                var cmd = new MySqlCommand("SELECT * FROM Provider.Task", conn);
+                var cmd = new MySqlCommand("SELECT * FROM DeliveryService.users", conn);
                 var reader = cmd.ExecuteReader();
                 {
                     while (reader.Read())
                     {
                         orders.Add(new Employee()
-                        {
-                            UserId = reader.GetInt32("user_id "),
-                            Username = reader.GetString("username "),
+                        { 
+                            UserId = reader.GetInt32("user_id"),
+                            Username = reader.GetString("username"),
                             Role = reader.GetString("role"),
                             Status = reader.GetString("status")
 
