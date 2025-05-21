@@ -14,9 +14,8 @@
 
         <!-- Шапка с информацией -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="20">
-            <TextBlock x:Name="CourierInfoText" FontSize="16" Text="Курьер: Загрузка..."/>
-            <Button x:Name="StartShiftButton" Content="Начать смену" Width="120"/>
-            <Button x:Name="EndShiftButton" Content="Завершить смену" Width="120" IsEnabled="False"/>
+            <Button x:Name="StartShiftButton" Content="Начать смену" />
+            <Button x:Name="EndShiftButton" Content="Завершить смену"  IsEnabled="False"/>
         </StackPanel>
 
         <!-- Основной контент -->
