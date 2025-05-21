@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Media;
 using MySql.Data.MySqlClient;
 
@@ -14,13 +15,14 @@ namespace DeliveryApp
         {
             InitializeComponent();
             CheckActiveShift();
+            LoadData();
         }
 
         private void CheckActiveShift()
         {
             int userId = LocalStorage.USERID;
             var currentTime = DateTime.Now;
-            
+
             try
             {
                 using (var connection = new MySqlConnection(ConnectionString))
@@ -89,6 +91,39 @@ namespace DeliveryApp
 
             // Активируем или деактивируем кнопки в зависимости от статуса
             actionButton.IsEnabled = isActive;
+        }
+
+        private void Button_OnClick(object? sender, RoutedEventArgs e)
+        {
+            EmployeesWindow employees = new EmployeesWindow();
+            Hide();
+            employees.Show();
+            this.Close();
+        }
+
+        public void LoadData()
+        {
+            var conn = new MySqlConnection("Server=localhost;Database=DeliveryService;User Id=root;Password=;");
+            try
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("SELECT COUNT(*) FROM DeliveryService.orders", conn);
+                int rowCount = Convert.ToInt32(cmd.ExecuteScalar());
+                NumBlock.Text = rowCount.ToString();
+                Num2.Text = rowCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
         }
     }
 }

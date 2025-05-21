@@ -23,7 +23,6 @@
             <StackPanel Margin="10">
                 <TextBlock x:Name="ShiftInfo" FontSize="18" FontWeight="Bold" Margin="0 5"/>
                 <TextBlock x:Name="StatusMessage" FontSize="16" Margin="0 5"/>
-                <Button x:Name="ActionButton" Content="Выполнить действие" IsEnabled="False" Width="200" Height="40" Margin="0 5"/>
             </StackPanel>
         </Border>
         
@@ -40,7 +39,7 @@
                 <StackPanel>
                     <TextBlock Text="Сотрудники" FontSize="16" FontWeight="SemiBold" Margin="0 0 0 5"/>
                     <TextBlock Text="Управление сотрудниками и ролями" FontSize="12" Margin="0 0 0 10"/>
-                    <Button Content="Открыть" HorizontalAlignment="Left" Padding="10 5"/>
+                    <Button Content="Открыть" HorizontalAlignment="Left" Padding="10 5" Click="Button_OnClick"/>
                 </StackPanel>
             </Border>
             
@@ -72,7 +71,7 @@
                 <!-- In Progress -->
                 <StackPanel Margin="0 10 0 5" Orientation="Horizontal">
                     <TextBlock Text="В процессе:" FontSize="14"/>
-                    <TextBlock Text="1" FontSize="14" FontWeight="Bold" Margin="5 0 0 0"/>
+                    <TextBlock Name="NumBlock"  FontSize="14" FontWeight="Bold" Margin="5 0 0 0"/>
                 </StackPanel>
                     
                 <!-- Completed -->
@@ -85,7 +84,7 @@
                 <Border Margin="0 10 0 0" BorderBrush="LightGray" BorderThickness="0 1 0 0" Padding="0 5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="Всего:" FontSize="16" FontWeight="SemiBold"/>
-                        <TextBlock Text="1" FontSize="24" FontWeight="Bold" Margin="10 0 0 0"/>
+                        <TextBlock Name ="Num2" FontSize="24" FontWeight="Bold" Margin="10 0 0 0"/>
                     </StackPanel>
                 </Border>
             </StackPanel>

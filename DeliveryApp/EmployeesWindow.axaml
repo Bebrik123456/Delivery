@@ -19,7 +19,7 @@
         </StackPanel>
 
         <!-- Список сотрудников -->
-        <ListBox x:Name="OrdersListBox" 
+        <ListBox Grid.Row="1" x:Name="OrdersListBox" 
                  Height="200"
                  Background="White"
                  BorderBrush="Gray"
