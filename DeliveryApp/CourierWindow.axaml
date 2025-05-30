@@ -4,8 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DeliveryApp.CourierWindow"
-        Title="CourierWindow">
-<Grid Margin="10">
+        Title="CourierWindow"
+        Background="#f0f0f0">
+
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -13,10 +15,12 @@
         </Grid.RowDefinitions>
 
         <!-- Шапка с информацией -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="20">
-            <Button x:Name="StartShiftButton" Content="Начать смену" />
-            <Button x:Name="EndShiftButton" Content="Завершить смену"  IsEnabled="False"/>
-        </StackPanel>
+        <Border Grid.Row="0" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10" Padding="10">
+            <StackPanel Orientation="Horizontal" Spacing="20" HorizontalAlignment="Center">
+                <Button x:Name="StartShiftButton" Content="Начать смену" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5"/>
+                <Button x:Name="EndShiftButton" Content="Завершить смену" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5" IsEnabled="False"/>
+            </StackPanel>
+        </Border>
 
         <!-- Основной контент -->
         <Grid Grid.Row="1" Margin="0 10">
@@ -26,52 +30,58 @@
             </Grid.ColumnDefinitions>
 
             <!-- Список заказов -->
-            <StackPanel Grid.Column="0" Margin="0 0 10 0">
-                <TextBlock FontSize="16" Text="Мои заказы" Margin="0 0 0 10"/>
-                <ListBox x:Name="OrdersListBox" Height="400">
-                    <!-- Простой список без шаблонов -->
-                </ListBox>
-                <Button x:Name="RefreshButton" Content="Обновить" Margin="0 10 0 0"/>
-            </StackPanel>
+            <Border Grid.Column="0" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10" Margin="0 0 10 0">
+                <StackPanel Margin="10">
+                    <TextBlock FontSize="16" Text="Мои заказы" Margin="0 0 0 10" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#007BFF"/>
+                    <ListBox x:Name="OrdersListBox" Height="350" Background="White" BorderBrush="Gray" BorderThickness="1">
+                        <!-- Простой список без шаблонов -->
+                    </ListBox>
+                    <Button x:Name="RefreshButton" Content="Обновить" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
 
             <!-- Детали заказа -->
-            <StackPanel Grid.Column="1" Spacing="10">
-                <TextBlock x:Name="OrderHeaderText" FontSize="16" Text="Выберите заказ"/>
-                
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10">
+                <StackPanel Margin="10" Spacing="10">
+                    <TextBlock x:Name="OrderHeaderText" FontSize="16" Text="Выберите заказ" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#007BFF"/>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Адрес:"/>
-                    <TextBlock x:Name="OrderAddressText" Grid.Row="0" Grid.Column="1" Text="Не выбран"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Клиент:"/>
-                    <TextBlock x:Name="OrderClientText" Grid.Row="1" Grid.Column="1" Text="Не выбран"/>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Адрес:" FontWeight="Bold"/>
+                        <TextBlock x:Name="OrderAddressText" Grid.Row="0" Grid.Column="1" Text="Не выбран"/>
 
-                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="10">
-                        <Button x:Name="AcceptOrderButton" Content="Принять заказ"/>
-                        <Button x:Name="CompleteOrderButton" Content="Завершить" IsEnabled="False"/>
-                    </StackPanel>
-                </Grid>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Клиент:" FontWeight="Bold"/>
+                        <TextBlock x:Name="OrderClientText" Grid.Row="1" Grid.Column="1" Text="Не выбран"/>
 
-                <!-- Карта-заглушка -->
-                <Border BorderBrush="Gray" BorderThickness="1" Height="300">
-                    <Image x:Name="MapImage" Stretch="UniformToFill"/>
-                </Border>
-            </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                            <Button x:Name="AcceptOrderButton" Content="Принять заказ" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5"/>
+                            <Button x:Name="CompleteOrderButton" Content="Завершить" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5" IsEnabled="False"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Карта-заглушка -->
+                    <Border BorderBrush="Gray" BorderThickness="1" Height="250" Margin="0 10 0 0">
+                        <Image x:Name="MapImage" Stretch="UniformToFill"/>
+                    </Border>
+                </StackPanel>
+            </Border>
         </Grid>
 
         <!-- Статистика -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
-            <TextBlock x:Name="StatsTodayText" Text="За сегодня: 0"/>
-            <TextBlock x:Name="StatsActiveText" Text="Активные: 0"/>
-        </StackPanel>
+        <Border Grid.Row="2" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
+                <TextBlock x:Name="StatsTodayText" Text="За сегодня: 0" FontWeight="Bold"/>
+                <TextBlock x:Name="StatsActiveText" Text="Активные: 0" FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

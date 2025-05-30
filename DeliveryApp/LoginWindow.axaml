@@ -1,4 +1,4 @@
- <Window xmlns="https://github.com/avaloniaui"
+<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,32 +7,35 @@
         Title="Login - DeliveryApp"
         MinWidth="800"
         MinHeight="600">
-    <Grid>
-    <Image Source="Image/Logo.jpg" 
-           HorizontalAlignment="Left" 
-           VerticalAlignment="Top"
-           MinWidth="100" 
-           MinHeight="100"
-           MaxWidth="150" 
-           MaxHeight="100"
-           Margin="5 5 0 0" />
-    
-    <StackPanel Margin="20" HorizontalAlignment="Center" Spacing="20" VerticalAlignment="Center">
-        
-        <TextBlock Text="Авторизаия" FontSize="20" HorizontalAlignment="Center"/>
-       
-        <TextBox Name="UsernameTextBox" Width="300" Watermark="Введите логин"/>
-        
-     
-        <TextBox Name="PasswordTextBox" Width="300" Watermark="Введите пароль"/>
-        
-        <Button Name="LoginButton" Content="Войти"
-                MinWidth="100"
-                Click="OnLoginButtonClick"
-                HorizontalContentAlignment="Center"
+
+    <Grid Background="#f0f0f0">
+        <Border Background="White"
+                BorderBrush="#007BFF"
+                BorderThickness="2"
+                CornerRadius="10"
+                Width="400"
+                Height="350"
                 HorizontalAlignment="Center"
-                Background="#007BFF" 
-                Foreground="Azure"/>
-    </StackPanel>
+                VerticalAlignment="Center">
+
+            <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+
+                <TextBlock Text="Авторизация" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#007BFF"/>
+
+                <TextBox Name="UsernameTextBox" Width="300" Watermark="Введите логин" BorderBrush="#007BFF" CornerRadius="5" Padding="10"/>
+
+                <TextBox Name="PasswordTextBox" Width="300" Watermark="Введите пароль" BorderBrush="#007BFF" CornerRadius="5" Padding="10"/>
+
+                <Button Name="LoginButton" Content="Войти"
+                        MinWidth="100"
+                        Click="OnLoginButtonClick"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Background="#007BFF"
+                        Foreground="White"
+                        CornerRadius="5"
+                        Padding="10,5"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

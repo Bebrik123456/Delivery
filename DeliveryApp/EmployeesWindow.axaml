@@ -3,7 +3,8 @@
         x:Class="DeliveryApp.EmployeesWindow"
         Title="Управление сотрудниками"
         Width="800" Height="500">
-    <Grid Margin="10">
+
+    <Grid Margin="10" Background="#f0f0f0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -11,21 +12,23 @@
         </Grid.RowDefinitions>
 
         <!-- Панель управления -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
-            <TextBox x:Name="SearchTextBox" Width="200" Text=""/>
-            <ComboBox x:Name="RoleComboBox" Width="150"/>
-            <Button x:Name="AddButton" Content="Добавить"/>
-            <Button x:Name="RefreshButton" Content="Обновить"/>
-        </StackPanel>
+        <Border Grid.Row="0" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10" Padding="10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBox x:Name="SearchTextBox" Width="200" Watermark="Поиск" BorderBrush="#007BFF" CornerRadius="5" Padding="10"/>
+                <ComboBox x:Name="RoleComboBox" Width="150" BorderBrush="#007BFF" CornerRadius="5" Padding="5"/>
+                <Button x:Name="AddButton" Content="Добавить" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5"/>
+                <Button x:Name="RefreshButton" Content="Обновить" Background="#007BFF" Foreground="White" CornerRadius="5" Padding="10,5"/>
+            </StackPanel>
+        </Border>
 
         <!-- Список сотрудников -->
-        <ListBox Grid.Row="1" x:Name="OrdersListBox" 
-                 Height="200"
-                 Background="White"
-                 BorderBrush="Gray"
-                 BorderThickness="1">
-            <!-- Пример статических данных (в реальном приложении будет заполняться из кода) -->
-                               
-        </ListBox>
+        <Border Grid.Row="1" Background="White" BorderBrush="#007BFF" BorderThickness="2" CornerRadius="10" Margin="0,10,0,0">
+            <ListBox x:Name="OrdersListBox" Height="200" Background="White" BorderBrush="Gray" BorderThickness="1">
+                <!-- Пример статических данных (в реальном приложении будет заполняться из кода) -->
+                <ListBoxItem>Сотрудник 1</ListBoxItem>
+                <ListBoxItem>Сотрудник 2</ListBoxItem>
+                <ListBoxItem>Сотрудник 3</ListBoxItem>
+            </ListBox>
+        </Border>
     </Grid>
 </Window>

@@ -90,7 +90,7 @@ namespace DeliveryApp
             statusText.Foreground = new SolidColorBrush(color);
 
             // Активируем или деактивируем кнопки в зависимости от статуса
-            actionButton.IsEnabled = isActive;
+           // actionButton.IsEnabled = isActive;
         }
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)
